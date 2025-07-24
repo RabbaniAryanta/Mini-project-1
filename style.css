@@ -1,0 +1,280 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.navbar {
+  background-color: #132b3e;
+  opacity: 0.8;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 400px;
+  flex-wrap: wrap;
+  top: 0;
+  position: sticky;
+  z-index: 999;
+  width: 100%;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 10px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.nav-links a:hover {
+  background-color: #264f70;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .logo {
+    margin-left: -380px;
+  }
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 12px 20px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Hero */
+.hero {
+  height: 75vh;
+  background-image: url("https://doran.id/wp-content/uploads/2024/05/FI.jpeg"); /* ganti dengan path gambar kamu */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -80px;
+}
+
+/* Overlay gelap */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* lapisan gelap */
+  z-index: 1;
+}
+
+/* Isi teks */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 20px;
+  opacity: 0.8;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Tombol opsional */
+.hero-content .btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 12px 24px;
+  background-color: #294f90;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.hero-content .btn:hover {
+  background-color: #223f71;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 50vh;
+  }
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+/* Pelajaran */
+.pelajaran-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pelajaran-item {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pelajaran-item:hover {
+  transform: scale(1.05);
+  transition: ease-in-out 0.2s;
+}
+
+.pelajaran-item img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.pelajaran-item h4 {
+  margin-bottom: 5px;
+  font-size: 15px;
+  color: #2563eb;
+}
+
+.pelajaran-item p {
+  font-size: 13px;
+  color: #444;
+}
+
+@media screen and (max-width: 768px) {
+  .pelajaran-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/*Deksripsi */
+.deskripsi-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px 20px;
+}
+
+.deskripsi-text {
+  font-size: 1.4rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.deskripsi-text2 {
+  margin-bottom: 70px;
+  font-size: 20px;
+  color: #686868;
+}
+
+.btn-mulai {
+  background-color: #7ed6a3;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 5px;
+  box-shadow: 0 5px 0 #5bb983;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.btn-mulai:hover {
+   background-color: #6cd193;
+  }
+
+.btn-mulai:active {
+  box-shadow: 0 2px 0 #5bb983;
+  transform: translateY(3px);
+}
+
+@media screen and (max-width: 768px){
+    .deskripsi-text {
+        font-size: 20px;
+      }
+      
+      .deskripsi-text2 {
+        margin-bottom: 40px;
+        font-size: 17px;
+      }
+}
+/* FOOTER */
+.footer {
+  background-color: #132b3e;
+  color: #fff;
+  padding: 20px 400px;
+  font-family: sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
